@@ -1,8 +1,7 @@
 import React from 'react';
 import App from './components/App';
 import { createRoot } from 'react-dom/client';
-
-import './styles/style.css';
+import './index.css';
 
 const container = document.getElementById('draggable-windows-container');
 

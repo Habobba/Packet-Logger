@@ -1,9 +1,13 @@
-import React from "react";
+import React from 'react';
 
-export default function App() {
+function App() {
     return (
         <>
-            <div className="w-[400px] h-[400px] bg-red-300">Test Environment</div>
+            <div className="bg-red-300 rounded-lg">
+                OK
+            </div>
         </>
     );
 }
+
+export default App;
