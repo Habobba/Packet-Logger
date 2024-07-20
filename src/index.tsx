@@ -1,11 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import App from './components/App';
+import { createRoot } from 'react-dom/client';
 
 import './styles/style.css';
-const App = () => {
-    return (
-        <div>Test Environment</div>
-    );
-};
 
-ReactDOM.render(<App />, document.getElementById('draggable-windows-container'));
+const container = document.getElementById('draggable-windows-container');
+
+if(!container) {
+    throw new Error('Container not found');
+}
+
+const root = createRoot(container);
+root.render(<App />);
