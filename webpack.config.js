@@ -51,10 +51,10 @@ module.exports = {
                 `// ==/UserScript==`,
             stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT,
         }),
-        // new HtmlWebpackPlugin({
-        //     template: './src/index.html',
-        //     filename: 'index.html'
-        // })
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            filename: 'index.html'
+        })
     ],
     optimization: {
         minimize: true,
