@@ -5,7 +5,7 @@ const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     entry: './src/index.tsx',
-    mode: 'production',
+    mode: 'development',
     output: {
         filename: 'bundle.min.js',
         path: path.resolve(__dirname, 'dist')
@@ -61,42 +61,14 @@ module.exports = {
         minimizer: [new TerserWebpackPlugin({
             extractComments: false,
         })],
-    }
+    },
+    devServer: {
+        static: {
+          directory: path.join(__dirname, 'public'),
+        },
+        compress: true,
+        port: 9000,
+        hot: true,
+        watchFiles: ['src/**/*', 'public/**/*'],
+      },
 };
-
-// module.exports = {
-//     entry: './src/index.ts',
-//     module: {
-//         rules: [
-//             {
-//                 test: /\.tsx?$/,
-//                 use: 'ts-loader',
-//                 exclude: /node_modules/,
-//             },
-//         ],
-//     },
-//     resolve: {
-//         extensions: ['.tsx', '.ts', '.js'],
-//     },
-//     output: {
-//         filename: 'habboba.min.js',
-//         path: path.resolve(__dirname, 'dist'),
-//     },
-//     mode: 'production',
-//     plugins: [
-//         new webpack.BannerPlugin({
-//             raw: true,
-//             banner:
-//                 `// ==UserScript==\n` +
-//                 `// @name        Habobba - Master Script\n` +
-//                 `// @namespace   Habobba Scripts\n` +
-//                 `// @match       https://www.habblet.city/hotelv2\n` +
-//                 `// @grant       none\n` +
-//                 `// @version     1.0\n` +
-//                 `// @author      CoreDuo\n` +
-//                 `// @description 16/07/2024, 00:39:31\n` +
-//                 `// ==/UserScript==`,
-//             stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT,
-//         })
-//     ]
-// };
