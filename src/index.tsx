@@ -3,11 +3,17 @@ import App from './components/App';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 
-const container = document.getElementById('draggable-windows-container');
+const elementId = 'draggable-windows-container';
 
-if(!container) {
-    throw new Error('Container not found');
-}
+const interval: NodeJS.Timeout = setInterval(() => {
+    if (!document.getElementById(elementId)) return;
 
-const root = createRoot(container);
-root.render(<App />);
+    clearInterval(interval);
+    
+    const container = document.getElementById(elementId);
+
+    if(!container) throw new Error('Container not found');
+
+    const root = createRoot(container);
+    root.render(<App />)
+}, 1000);

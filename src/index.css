@@ -12,3 +12,7 @@
     font-family: Montserrat, sans-serif;
     text-rendering: optimizeLegibility;
 }
+
+body {
+    background-color: #010101;
+}
