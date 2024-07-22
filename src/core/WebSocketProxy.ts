@@ -1,4 +1,4 @@
-import { BinaryReader } from "./BinaryReader";
+import { BinaryReader } from "./binary/BinaryReader";
 
 export type InterceptionCallback = (reader: BinaryReader) => boolean | Promise<boolean>;
 

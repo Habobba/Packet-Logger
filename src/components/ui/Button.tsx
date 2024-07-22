@@ -4,12 +4,14 @@ interface ButtonProps {
     type?: 'success' | 'danger' | 'warning' | 'info'
     message: string
     classes?: string
+    onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 export default function Button({
     message,
     type = 'success',
-    classes = ''
+    classes = '',
+    onClick
 }: ButtonProps) {
     const colors = {
         success: 'hb-bg-green-600 hover:hb-bg-green-500 hb-border-green-500',
@@ -19,7 +21,7 @@ export default function Button({
     }
 
     return (
-        <button className={`hb-px-2.5 hb-py-1 hb-text-xs hb-rounded-lg hb-border hb-border-transparent hb-text-white ${colors[type]} ${classes}`}>
+        <button onClick={onClick} className={`hb-px-2.5 hb-py-1 hb-text-xs hb-rounded-lg hb-border hb-border-transparent hb-text-white ${colors[type]} ${classes}`}>
             {message}
         </button>
     )

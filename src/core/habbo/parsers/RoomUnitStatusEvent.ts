@@ -1,7 +1,6 @@
-import { BinaryReader } from "./BinaryReader";
-import { RoomUnitStatusAction } from "./RoomUnitStatusAction";
-import { RoomUnitStatusMessage } from "./RoomUnitStatusMessage";
-
+import { BinaryReader } from "../../binary/BinaryReader";
+import { RoomUnitStatusAction } from "../room/unit/status/RoomUnitStatusAction";
+import { RoomUnitStatusMessage } from "../room/unit/status/RoomUnitStatusMessage";
 
 export class RoomUnitStatusEvent {
 

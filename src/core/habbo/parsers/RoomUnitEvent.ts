@@ -1,5 +1,5 @@
-import { BinaryReader } from "./BinaryReader";
-import { RoomUnit } from "./room/RoomUnit";
+import { BinaryReader } from "../../binary/BinaryReader";
+import { RoomUnit } from "../room/unit/RoomUnit";
 
 export class RoomUnitEvent {
 

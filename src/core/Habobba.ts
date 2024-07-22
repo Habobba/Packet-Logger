@@ -1,5 +1,5 @@
-import { Room } from "./room/Room";
-import { UserInfo } from "./UserInfo";
+import { Room } from "./habbo/room/Room";
+import { UserInfo } from "./habbo/user/UserInfo";
 
 
 export class Habobba {

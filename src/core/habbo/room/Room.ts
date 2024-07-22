@@ -1,4 +1,4 @@
-import { RoomUnit } from "./RoomUnit";
+import { RoomUnit } from "./unit/RoomUnit";
 
 
 export class Room {

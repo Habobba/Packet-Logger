@@ -5,6 +5,7 @@ import Scheduler from './views/Scheduler';
 import Extensions from './views/Extensions';
 import Extra from './views/Extra';
 import About from './views/About';
+import { WebSocketProxy } from '../core/WebSocketProxy';
 
 function App() {
     const [minimal, setMinimal] = useState(false);
@@ -54,6 +55,12 @@ function App() {
         };
     }, [handleMouseMove]);
 
+    React.useEffect(() => {
+        if (process.env.NODE_ENV != 'development') {
+            WebSocketProxy.run();
+        }
+    }, []);
+
     return (
         <>
             <div
@@ -77,14 +84,14 @@ function App() {
                 </section>
 
                 <nav className="hb-w-full hb-flex hb-gap-4 hb-h-12">
-                    { tabs.map(tab => (
+                    {tabs.map(tab => (
                         <button
                             className={`hb-px-2 hb-text-sm hb-font-semibold ${activeTab === tab.key ? 'hb-text-blue-600 hb-border-b-2 hb-border-blue-600' : 'hb-text-white'} hb-h-12 hb-flex hb-items-center`}
                             onClick={() => setActiveTab(tab.key)}
                         >
                             {tab.name}
                         </button>
-                    )) }
+                    ))}
                 </nav>
 
                 <section className="hb-w-full hb-flex-1 hb-p-2 hb-bg-white/5 hb-rounded-lg hb-overflow-hidden">
