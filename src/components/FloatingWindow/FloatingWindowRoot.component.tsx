@@ -8,7 +8,7 @@ export default function FloatingWindowRoot(props: FloatingWindowRootProps): JSX.
     const { children, title }: FloatingWindowRootProps = props;
 
     const [dragging, setDragging] = useState<boolean>(false);
-    const [position, setPosition] = useState<{ x: number, y: number }>({ x: 0, y: 0 });
+    const [position, setPosition] = useState<{ x: number, y: number }>({ x: 100, y: 100 });
     const initialPosition = useRef<{ x: number, y: number }>({ x: 0, y: 0});
 
     function onMouseDown(e: MouseEvent<HTMLElement>): void {
@@ -41,14 +41,14 @@ export default function FloatingWindowRoot(props: FloatingWindowRootProps): JSX.
 
     return (
         <div
-            className="hb-min-h-[450px] hb-w-[750px] hb-bg-neutral-950 hb-flex hb-flex-col hb-absolute"
+            className="hb-min-h-[450px] hb-w-[750px] hb-bg-neutral-950 hb-flex hb-flex-col hb-absolute hb-rounded-[4px] hb-border-neutral-900 hb-border"
             style={{ left: position.x, top: position.y }}
         >
             <header
-                className="hb-w-100 hb-h-10 hb-bg-white/5 hb-flex hb-items-center hb-justify-between hb-p-4"
+                className="hb-w-100 hb-h-10 hb-flex hb-items-center hb-justify-between hb-p-2"
                 onMouseDown={onMouseDown}
             >
-                <span className="hb-text-white hb-text-sm hb-font-semibold">{title}</span>
+                <span className="hb-text-white hb-text-sm">{title}</span>
                 <div className="hb-flex hb-gap-3 hb-items-center">
                     <span className="hb-text-white hb-cursor-pointer hover:hb-text-blue-400">
                         <i className="fa-solid fa-sm fa-chevron-down"></i>
