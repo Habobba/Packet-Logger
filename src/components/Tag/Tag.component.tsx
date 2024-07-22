@@ -25,7 +25,7 @@ export default function Tag(props: TagProps): JSX.Element {
     }
 
     return (
-        <span className={`hb-block hb-w-min hb-whitespace-nowrap hb-px-2 hb-py-0 hb-border hb-rounded-full ${renderStyle(type)}`}>
+        <span className={`hb-block hb-w-min hb-whitespace-nowrap hb-px-2 hb-py-1 hb-text-xs hb-border hb-rounded-[4px] ${renderStyle(type)}`}>
             {label}
         </span>
     )
